@@ -22,7 +22,6 @@ describe('Unit: MainController', function() {
   });
   it('should change $scope.name when calling changename', 
     function() {
-      expect(scope.name).toBeUndefined();
       scope.changename();
       expect(scope.name).toEqual("Harsha");
   });
