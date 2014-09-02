@@ -26,3 +26,18 @@ describe('Unit: MainController', function() {
       expect(scope.name).toEqual("Harsha");
   });
 })
+describe('Unit testing great quotes', function() {
+    var $compile;
+    var $rootScope;
+    beforeEach(module('myApp'));
+    beforeEach(inject(function(_$compile_, _$rootScope_){
+      $compile = _$compile_;
+      $rootScope = _$rootScope_;
+    }));
+
+    it('Replaces the element with the appropriate content', function( {
+        var element = $compile("<a-great-eye></a-great-eye>")($rootScope);
+        $rootScope.$digest();
+        expect(element.html()).toContain("lidless, wreathed in flame, 3 times");
+    });
+});
